@@ -1,6 +1,7 @@
+import 'package:finance_app/screens/main/body.dart';
+import 'package:finance_app/components/theme.dart';
 import 'routes.dart';
 import 'package:flutter/material.dart';
-
 import 'size_config.dart';
 
 void main() {
@@ -16,9 +17,7 @@ class FinanceApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       supportedLocales: const [Locale('en', 'US')],
       title: 'Finance App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: theme(),
       routes: routes,
       home: const LandingPage(),
     );
@@ -36,6 +35,8 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Column();
+    return const Scaffold(
+      body: Body(),
+    );
   }
 }
