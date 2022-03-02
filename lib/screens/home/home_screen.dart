@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../components/custom_navbar.dart';
+import '../../enums.dart';
 import 'components/body.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,7 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
         drawer: Drawer(
           child: Column(),
         ),
-        body: const Body(),
+        body: const SingleChildScrollView(child: Body()),
+        bottomNavigationBar:
+            const CustomBottomNavBar(selectedMenu: MenuState.home),
       ),
     );
   }
