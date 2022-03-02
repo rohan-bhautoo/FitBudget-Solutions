@@ -1,4 +1,5 @@
 import 'package:finance_app/screens/home/home_screen.dart';
+import 'package:finance_app/screens/income/income_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../enums.dart';
@@ -53,11 +54,11 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             ),
             IconButton(
               onPressed: () =>
-                  Navigator.pushNamed(context, HomeScreen.routeName)
+                  Navigator.pushNamed(context, IncomeScreen.routeName)
                       .then((value) => setState(() {})),
               icon: SvgPicture.asset("assets/icons/Income.svg",
                   width: 25,
-                  color: MenuState.stats == widget.selectedMenu
+                  color: MenuState.income == widget.selectedMenu
                       ? kPrimaryColor
                       : inActiveIconColor),
             ),

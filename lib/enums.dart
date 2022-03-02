@@ -1,1 +1,1 @@
-enum MenuState { home, stats, notification, profile }
+enum MenuState { home, income, notification, profile }
