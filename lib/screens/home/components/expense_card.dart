@@ -49,6 +49,7 @@ class _ExpenseCardState extends State<ExpenseCard> {
             Image.asset(
               widget.icon,
               width: getProportionateScreenWidth(45),
+              color: Colors.white,
             ),
             const SizedBox(width: 20),
             Column(

@@ -1,7 +1,7 @@
 import 'package:finance_app/components/constants.dart';
-import 'package:finance_app/components/icon_container.dart';
 import 'package:finance_app/components/rounded_icon_btn.dart';
 import 'package:finance_app/screens/home/components/expense_card.dart';
+import 'package:finance_app/screens/home/components/transaction_card.dart';
 import 'package:finance_app/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/credit_card_widget.dart';
@@ -27,6 +27,21 @@ class _BodyState extends State<Body> {
       "title": "Vehicle",
       "price": 1402.30,
       "icon": "assets/images/car.png",
+    },
+  ];
+
+  List<Map<String, dynamic>> transaction = [
+    {
+      "transactionName": "Shopping",
+      "price": 45.00,
+      "icon": "assets/icons/grocery.png",
+      "time": "Just Now"
+    },
+    {
+      "transactionName": "Gym",
+      "price": 125.00,
+      "icon": "assets/icons/gym.png",
+      "time": "02 March 2022 22:47"
     },
   ];
   @override
@@ -111,10 +126,14 @@ class _BodyState extends State<Body> {
               ),
             ),
             const SizedBox(height: 20),
-            Row(
-              children: const [
-                IconContainer(icon: "assets/icons/grocery.png"),
-              ],
+            ...List.generate(
+              transaction.length,
+              (index) => TransactionCard(
+                icon: transaction[index]["icon"],
+                transactionName: transaction[index]["transactionName"],
+                time: transaction[index]["time"],
+                price: transaction[index]["price"],
+              ),
             ),
           ],
         ),
